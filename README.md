@@ -1,19 +1,5 @@
 # Python Core – 42 Porto
 
-This repository contains Python exercises and small scripts developed during my studies at 42 Porto, as part of the Common Core (Python track).
-
-The focus is on strengthening core programming concepts, problem-solving skills, and clean, readable code through hands-on practice.
-
-Topics include:
-- Python syntax and control flow
-- Functions and modules
-- Data structures
-- Basic automation scripts
-
-This repository reflects my ongoing learning process.
-
-# Python Core – 42 Porto
-
 This repository contains Python projects and exercises developed during the **42 Porto Common Core – Python track (Milestone 2)**.
 
 The goal of this repository is to strengthen core programming concepts through hands-on, project-based learning, following the peer-to-peer and self-driven methodology of 42.
@@ -173,3 +159,4 @@ This repository reflects my continuous learning process and progression through 
 - This repository contains **only original code**.
 - No official subjects or evaluation materials are included.
 - Exercises are presented for learning and portfolio purposes.
+
