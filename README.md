@@ -48,18 +48,17 @@ fundamental concepts to more advanced software design topics.
 Each folder represents an **independent learning module**, designed to strengthen
 specific programming concepts.
 
-```text
-module-00  → Python basics and control flow
-module-01  → Functions, encapsulation & intro to OOP
-module-02  → Exceptions and error handling
-module-03  → Data processing and analytics logic
-module-04  → File handling and streams
-module-05  → Data pipelines and flow control
-module-06  → Modules, packages, and imports
-module-07  → Object-Oriented design patterns
-module-08  → Environment configuration & dependencies
-module-09  → Advanced project configuration
-module-10  → Functional programming concepts
+- module-00  → Python basics and control flow
+- module-01  → Functions, encapsulation & intro to OOP
+- module-02  → Exceptions and error handling
+- module-03  → Data processing and analytics logic
+- module-04  → File handling and streams
+- module-05  → Data pipelines and flow control
+- module-06  → Modules, packages, and imports
+- module-07  → Object-Oriented design patterns
+- module-08  → Environment configuration & dependencies
+- module-09  → Advanced project configuration
+- module-10  → Functional programming concepts
 
 ---
 
@@ -200,5 +199,6 @@ This repository reflects my continuous learning process and progression through 
 - This repository contains **only original code**.
 - No official subjects or evaluation materials are included.
 - Exercises are presented for learning and portfolio purposes.
+
 
 
