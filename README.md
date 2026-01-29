@@ -1,24 +1,65 @@
-# Python Core – 42 Porto
+<p align="center">
+  <img src="https://img.shields.io/badge/42-Porto-black?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Common%20Core-Milestone%202-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Language-Python-yellow?style=for-the-badge&logo=python" />
+</p>
 
-This repository contains Python projects and exercises developed during the **42 Porto Common Core – Python track (Milestone 2)**.
+<h1 align="center">🐍 Python Core – 42 Porto (Milestone 2)</h1>
 
-The goal of this repository is to strengthen core programming concepts through hands-on, project-based learning, following the peer-to-peer and self-driven methodology of 42.
-
-Each module focuses on specific Python concepts and progressively increases in complexity, reinforcing problem-solving skills, code organization, and software design fundamentals.
+<p align="center">
+Repository representing my progression through <strong>Milestone 2 (Python)</strong> of the
+<strong>42 Porto Common Core</strong>.
+</p>
 
 ---
 
-## 📚 Modules Overview
+## 🎯 Context
 
-### Module 00 – Python Basics & Control Flow
-Focuses on fundamental Python syntax and basic problem-solving.
+The 42 curriculum is a **project-based, peer-to-peer software engineering program**
+with no traditional classes, teachers, or lectures.
 
-**Key concepts:**
-- Variables and data types
-- Arithmetic operations
-- Conditional statements
-- Basic functions
-- Iterative and recursive approaches
+Learning is driven by:
+- Hands-on projects
+- Peer evaluations
+- Autonomy and problem-solving
+- Strong emphasis on code quality and reasoning
+
+This repository focuses on **Python**, following a structured progression from
+fundamental concepts to more advanced software design topics.
+
+---
+
+## 🧠 Skills & Topics Covered
+
+- Python fundamentals
+- Control flow and data structures
+- Exception handling and defensive programming
+- File handling and streams
+- Modular project organization
+- Object-Oriented Programming (OOP)
+- Design patterns
+- Environment configuration
+- Functional programming concepts
+
+---
+
+## 📂 Repository Structure
+
+Each folder represents an **independent learning module**, designed to strengthen
+specific programming concepts.
+
+```text
+module-00  → Python basics and control flow
+module-01  → Functions, encapsulation & intro to OOP
+module-02  → Exceptions and error handling
+module-03  → Data processing and analytics logic
+module-04  → File handling and streams
+module-05  → Data pipelines and flow control
+module-06  → Modules, packages, and imports
+module-07  → Object-Oriented design patterns
+module-08  → Environment configuration & dependencies
+module-09  → Advanced project configuration
+module-10  → Functional programming concepts
 
 ---
 
@@ -159,4 +200,5 @@ This repository reflects my continuous learning process and progression through 
 - This repository contains **only original code**.
 - No official subjects or evaluation materials are included.
 - Exercises are presented for learning and portfolio purposes.
+
 
