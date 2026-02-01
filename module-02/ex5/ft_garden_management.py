@@ -103,7 +103,7 @@ class GardenManager:
 
 def test_garden_management() -> None:
     """Demonstrate integrated garden management."""
-    print("=== Garden Management System ===")
+    print("=== Garden Management System ===\n")
 
     manager = GardenManager()
 
@@ -111,17 +111,17 @@ def test_garden_management() -> None:
     manager.add_plant("tomato", 5, 8)
     manager.add_plant("lettuce", 15, 6)
     manager.add_plant("", 4, 7)
-
+    print()
     print("Watering plants...")
     manager.water_plants()
-
+    print()
     print("Checking plant health...")
     manager.check_plant_health("tomato")
     manager.check_plant_health("lettuce")
-
+    print()
     print("Testing error recovery...")
     manager.check_water_supply()
-
+    print()
     print("Garden management system test complete!")
 
 
