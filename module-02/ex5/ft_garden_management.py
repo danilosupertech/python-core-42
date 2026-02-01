@@ -6,18 +6,12 @@ class GardenError(Exception):
     """Base exception for all garden-related errors."""
 
 
-
-
 class PlantError(GardenError):
     """Exception for problems with plants."""
 
 
-
-
 class WaterError(GardenError):
     """Exception for problems with watering."""
-
-
 
 
 class GardenManager:
@@ -30,25 +24,16 @@ class GardenManager:
 
     def add_plant(self, name: str, water_level: int, sunlight_hours: int) -> None:
         """
-        Add a plant with validation.
+        Add a plant to the garden.
 
         Args:
             name: Plant name
             water_level: Water requirement (1-10)
             sunlight_hours: Required sunlight (2-12)
-
-        Raises:
-            PlantError: If plant data is invalid
         """
         try:
             if not name or name.strip() == "":
                 raise ValueError("Plant name cannot be empty!")
-            if water_level < 1 or water_level > 10:
-                raise ValueError(f"Water level {water_level} is invalid (must be 1-10)")
-            if sunlight_hours < 2 or sunlight_hours > 12:
-                raise ValueError(
-                    f"Sunlight hours {sunlight_hours} is invalid (must be 2-12)"
-                )
             self.plants[name] = {
                 "water_level": water_level,
                 "sunlight_hours": sunlight_hours,
@@ -57,15 +42,13 @@ class GardenManager:
         except ValueError as error:
             print(f"Error adding plant: {error}")
 
-    def water_all_plants(self) -> None:
+    def water_plants(self) -> None:
         """Water all plants with cleanup guarantee."""
         try:
             print("Opening watering system")
             for plant_name in self.plants:
                 print(f"Watering {plant_name} - success")
                 self.water_supply -= 5
-        except Exception as error:
-            print(f"Watering error: {error}")
         finally:
             print("Closing watering system (cleanup)")
 
@@ -84,12 +67,22 @@ class GardenManager:
                 raise PlantError(f"Plant {plant_name} not found in garden!")
 
             plant = self.plants[plant_name]
+            water_level = plant["water_level"]
+            sunlight_hours = plant["sunlight_hours"]
+
+            if water_level < 1 or water_level > 10:
+                raise ValueError(f"Water level {water_level} is too high (max 10)" if water_level >
+                                 10 else f"Water level {water_level} is too low (min 1)")
+            if sunlight_hours < 2 or sunlight_hours > 12:
+                raise ValueError(f"Sunlight hours {sunlight_hours} is too high (max 12)" if sunlight_hours >
+                                 12 else f"Sunlight hours {sunlight_hours} is too low (min 2)")
+
             print(
                 f"{plant_name}: healthy "
-                f"(water: {plant['water_level']}, "
-                f"sun: {plant['sunlight_hours']})"
+                f"(water: {water_level}, "
+                f"sun: {sunlight_hours})"
             )
-        except PlantError as error:
+        except (PlantError, ValueError) as error:
             print(f"Error checking {plant_name}: {error}")
 
     def check_water_supply(self) -> None:
@@ -108,7 +101,7 @@ class GardenManager:
             print("System recovered and continuing...")
 
 
-def main() -> None:
+def test_garden_management() -> None:
     """Demonstrate integrated garden management."""
     print("=== Garden Management System ===")
 
@@ -116,21 +109,25 @@ def main() -> None:
 
     print("Adding plants to garden...")
     manager.add_plant("tomato", 5, 8)
-    manager.add_plant("lettuce", 3, 6)
+    manager.add_plant("lettuce", 15, 6)
     manager.add_plant("", 4, 7)
 
-    print("\nWatering plants...")
-    manager.water_all_plants()
+    print("Watering plants...")
+    manager.water_plants()
 
-    print("\nChecking plant health...")
+    print("Checking plant health...")
     manager.check_plant_health("tomato")
     manager.check_plant_health("lettuce")
-    manager.check_plant_health("basil")
 
-    print("\nTesting error recovery...")
+    print("Testing error recovery...")
     manager.check_water_supply()
 
-    print("\nGarden management system test complete!")
+    print("Garden management system test complete!")
+
+
+def main() -> None:
+    """Run garden management tests."""
+    test_garden_management()
 
 
 if __name__ == "__main__":

@@ -16,14 +16,14 @@ def garden_operations() -> None:
     # ZeroDivisionError
     print("Testing ZeroDivisionError...")
     try:
-        result = 10 / 0
+        _ = 10 / 0
     except ZeroDivisionError as error:
         print(f"Caught ZeroDivisionError: {error}")
 
     # FileNotFoundError
     print("Testing FileNotFoundError...")
     try:
-        with open("missing.txt", "r") as file:
+        with open("missing.txt", "r", encoding="utf-8") as file:
             file.read()
     except FileNotFoundError as error:
         print(f"Caught FileNotFoundError: No such file '{error.filename}'")
@@ -32,7 +32,7 @@ def garden_operations() -> None:
     print("Testing KeyError...")
     try:
         plants = {"tomato": 5, "lettuce": 3}
-        height = plants["missing_plant"]
+        _ = plants["missing_plant"]
     except KeyError as error:
         print(f"Caught KeyError: {error}")
 

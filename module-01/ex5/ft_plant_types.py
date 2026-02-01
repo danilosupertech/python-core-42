@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Exercise 5: Plant types with inheritance."""
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
@@ -62,14 +63,19 @@ class Tree(Plant):
 class Vegetable(Plant):
     """Specialized plant type: Vegetable."""
 
-    def __init__(self, name: str, height: int, age: int, *harvest_data: str) -> None:
+    def __init__(  # pylint: disable=too-many-arguments
+        self,
+        name: str,
+        height: int,
+        age: int,
+        harvest_season: str,
+        nutritional_value: str,
+    ) -> None:
         """Initialize the vegetable with name, height, age, harvest season and nutritional value."""
 
         super().__init__(name, height, age)
-        if len(harvest_data) != 2:
-            raise ValueError("Vegetable requires harvest season and nutritional value")
-
-        self.harvest_season, self.nutritional_value = harvest_data
+        self.harvest_season = harvest_season
+        self.nutritional_value = nutritional_value
 
     def get_info(self) -> str:
         """Return information about the vegetable."""

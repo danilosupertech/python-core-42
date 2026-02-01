@@ -24,47 +24,49 @@ def check_plant_health(
     if not plant_name or plant_name.strip() == "":
         raise ValueError("Plant name cannot be empty!")
 
-    if water_level < 1 or water_level > 10:
-        raise ValueError(f"Water level {water_level} is invalid (must be 1-10)")
+    if water_level < 1:
+        raise ValueError(f"Water level {water_level} is too low (min 1)")
+    if water_level > 10:
+        raise ValueError(f"Water level {water_level} is too high (max 10)")
 
-    if sunlight_hours < 2 or sunlight_hours > 12:
-        raise ValueError(f"Sunlight hours {sunlight_hours} is invalid (must be 2-12)")
+    if sunlight_hours < 2:
+        raise ValueError(f"Sunlight hours {sunlight_hours} is too low (min 2)")
+    if sunlight_hours > 12:
+        raise ValueError(
+            f"Sunlight hours {sunlight_hours} is too high (max 12)")
 
     return f"Plant '{plant_name}' is healthy!"
 
 
-def test_good_values() -> None:
-    """Test with valid values."""
+def test_plant_checks() -> None:
+    """Demonstrate plant health checking with various scenarios."""
+    print("=== Garden Plant Health Checker ===\n")
+
+    # Testing with good values
     print("Testing good values...")
     try:
         result = check_plant_health("tomato", 5, 8)
         print(result)
     except ValueError as error:
         print(f"Error: {error}")
-
-
-def test_bad_plant_name() -> None:
-    """Test with empty plant name."""
+    print()
+    # Testing with bad plant name
     print("Testing empty plant name...")
     try:
         result = check_plant_health("", 5, 8)
         print(result)
     except ValueError as error:
         print(f"Error: {error}")
-
-
-def test_bad_water_level() -> None:
-    """Test with invalid water level."""
+    print()
+    # Testing with bad water level
     print("Testing bad water level...")
     try:
         result = check_plant_health("tomato", 15, 8)
         print(result)
     except ValueError as error:
         print(f"Error: {error}")
-
-
-def test_bad_sunlight_hours() -> None:
-    """Test with invalid sunlight hours."""
+    print()
+    # Testing with bad sunlight hours
     print("Testing bad sunlight hours...")
     try:
         result = check_plant_health("tomato", 5, 0)
@@ -72,15 +74,12 @@ def test_bad_sunlight_hours() -> None:
     except ValueError as error:
         print(f"Error: {error}")
 
+    print("\nAll error raising tests completed!")
+
 
 def main() -> None:
     """Run all plant health tests."""
-    print("=== Garden Plant Health Checker ===")
-    test_good_values()
-    test_bad_plant_name()
-    test_bad_water_level()
-    test_bad_sunlight_hours()
-    print("All error raising tests completed!")
+    test_plant_checks()
 
 
 if __name__ == "__main__":
