@@ -20,10 +20,12 @@ def demo() -> None:
     print("Drawing and playing cards:")
 
     while True:
-        card = deck.draw_card()
-        if card is None:
+        try:
+            card = deck.draw_card()
+        except ValueError:
             break
-        print(f"Drew: {card.name} ({card.__class__.__name__})")
+        card_info = card.get_card_info()
+        print(f"Drew: {card.name} ({card_info.get('type', 'Card')})")
         print("Play result:", card.play({}))
 
     print("Polymorphism in action: Same interface, different card behaviors!")

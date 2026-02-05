@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    stream_processor.py                                :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: danicort <danicort@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/02/04 00:00:00 by danicort          #+#    #+#              #
+#    Updated: 2026/02/04 00:00:00 by danicort         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 """Data Processor Foundation - Abstract polymorphic data processing system."""
 
 from abc import ABC, abstractmethod
@@ -110,7 +122,7 @@ def demonstrate_polymorphism() -> None:
     print(f"Processing data: {numeric_data}")
     print(f"Validation: Numeric data verified")
     result = numeric_proc.process(numeric_data)
-    print(numeric_proc.format_output(result))
+    print(f"Output: {result}")
 
     print("\nInitializing Text Processor...")
     text_proc = TextProcessor()
@@ -118,7 +130,7 @@ def demonstrate_polymorphism() -> None:
     print(f'Processing data: "{text_data}"')
     print("Validation: Text data verified")
     result = text_proc.process(text_data)
-    print(text_proc.format_output(result))
+    print(f"Output: {result}")
 
     print("\nInitializing Log Processor...")
     log_proc = LogProcessor()
@@ -126,7 +138,7 @@ def demonstrate_polymorphism() -> None:
     print(f'Processing data: "{log_data}"')
     print("Validation: Log entry verified")
     result = log_proc.process(log_data)
-    print(log_proc.format_output(result))
+    print(f"Output: {result}")
 
     print("\n=== Polymorphic Processing Demo ===")
     print("Processing multiple data types through same interface...")

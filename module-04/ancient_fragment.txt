@@ -1,5 +1,3 @@
-=== ANCIENT VAULT CONTENTS ===
-Fragment-001: "In the beginning, data was scattered across dimensions..."
-Fragment-002: "The Archives preserved what the ages could not destroy..."
-Fragment-003: "Digital remnants of lost civilizations encoded within..."
-=== END OF TRANSMISSION ===
+[FRAGMENT 001] Digital preservation protocols established 2087
+[FRAGMENT 002] Knowledge must survive the entropy wars
+[FRAGMENT 003] Every byte saved is a victory against oblivion

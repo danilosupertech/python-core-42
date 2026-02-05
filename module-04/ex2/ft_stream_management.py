@@ -6,7 +6,7 @@ import sys
 
 def demonstrate_streams() -> None:
     """Demonstrate sys.stdout, sys.stderr, sys.stdin streams."""
-    print("=== CYBER ARCHIVES - STREAM MANAGEMENT SYSTEM ===", file=sys.stdout)
+    print("=== CYBER ARCHIVES - STREAM MANAGEMENT SYSTEM ===\n", file=sys.stdout)
 
     sys.stdout.write("Standard output stream activated.\n")
     sys.stderr.write("Standard error stream ready (not for errors now).\n")

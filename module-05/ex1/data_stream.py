@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    data_stream.py                                     :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: danicort <danicort@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/02/04 00:00:00 by danicort          #+#    #+#              #
+#    Updated: 2026/02/04 00:00:00 by danicort         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 """Polymorphic Streams - Advanced data streaming system with polymorphism."""
 
 from abc import ABC, abstractmethod

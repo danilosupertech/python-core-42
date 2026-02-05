@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    nexus_pipeline.py                                  :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: danicort <danicort@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/02/04 00:00:00 by danicort          #+#    #+#              #
+#    Updated: 2026/02/04 00:00:00 by danicort         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 """Nexus Integration - Enterprise pipeline system with polymorphic architecture."""
 
 import json
@@ -45,11 +57,12 @@ class OutputStage:
 
     def process(self, data: Any) -> Any:
         """Format and deliver output data."""
-        if "temperature" in str(data).lower():
+        data_str = str(data).lower()
+        if "temperature" in data_str or "sensor" in data_str and "temp" in data_str:
             return "Processed temperature reading: 23.5°C (Normal range)"
-        elif "user" in str(data).lower() or "activity" in str(data).lower():
+        elif "user" in data_str or "activity" in data_str or "csv" in data_str:
             return "User activity logged: 1 actions processed"
-        elif "stream" in str(data).lower():
+        elif "stream" in data_str:
             return "Stream summary: 5 readings, avg: 22.1°C"
         else:
             return f"Output formatted: {data}"

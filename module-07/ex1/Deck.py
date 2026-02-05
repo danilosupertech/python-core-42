@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import random
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 from ex0.Card import Card
 from ex0.CreatureCard import CreatureCard
@@ -29,9 +29,9 @@ class Deck:
     def shuffle(self) -> None:
         random.shuffle(self.cards)
 
-    def draw_card(self) -> Optional[Card]:
+    def draw_card(self) -> Card:
         if not self.cards:
-            return None
+            raise ValueError("Deck is empty")
         return self.cards.pop(0)
 
     def get_deck_stats(self) -> Dict:
