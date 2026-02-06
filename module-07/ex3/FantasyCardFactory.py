@@ -10,21 +10,55 @@ from ex3.CardFactory import CardFactory
 
 
 class FantasyCardFactory(CardFactory):
+    """Concrete factory for creating fantasy-themed cards."""
+
     def create_creature(self, name_or_power: str | int | None = None) -> CreatureCard:
+        """Create a fantasy creature card.
+        
+        Args:
+            name_or_power: Name or power level for the creature.
+            
+        Returns:
+            A CreatureCard instance with fantasy theme.
+        """
         if isinstance(name_or_power, int):
             attack = max(1, name_or_power)
             return CreatureCard("Goblin Warrior", cost=2, rarity="Common", attack=attack, health=attack + 1)
         return CreatureCard(name_or_power or "Fire Dragon", cost=5, rarity="Legendary", attack=7, health=5)
 
     def create_spell(self, name_or_power: str | int | None = None) -> SpellCard:
+        """Create a fantasy spell card.
+        
+        Args:
+            name_or_power: Name or power level for the spell.
+            
+        Returns:
+            A SpellCard instance with fantasy theme.
+        """
         if isinstance(name_or_power, int):
             return SpellCard("Lightning Bolt", cost=3, rarity="Rare", effect_type="damage")
         return SpellCard(name_or_power or "Healing Light", cost=2, rarity="Uncommon", effect_type="heal")
 
     def create_artifact(self, name_or_power: str | int | None = None) -> ArtifactCard:
+        """Create a fantasy artifact card.
+        
+        Args:
+            name_or_power: Name or power level for the artifact.
+            
+        Returns:
+            An ArtifactCard instance with fantasy theme.
+        """
         return ArtifactCard(name_or_power or "Mana Ring", cost=2, rarity="Uncommon", durability=3, effect="+1 mana per turn")
 
     def create_themed_deck(self, size: int) -> Dict:
+        """Create a fantasy-themed deck of cards.
+        
+        Args:
+            size: Number of cards to include in the deck.
+            
+        Returns:
+            Dictionary containing deck cards and creature count.
+        """
         cards = []
         for i in range(size):
             if i % 3 == 0:
@@ -36,6 +70,11 @@ class FantasyCardFactory(CardFactory):
         return {"cards": cards, "counts": {"creatures": sum(c.__class__.__name__ == "CreatureCard" for c in cards)}}
 
     def get_supported_types(self) -> Dict:
+        """Get the fantasy card types supported by this factory.
+        
+        Returns:
+            Dictionary mapping card type categories to fantasy types.
+        """
         return {
             "creatures": ["dragon", "goblin"],
             "spells": ["fireball", "heal"],

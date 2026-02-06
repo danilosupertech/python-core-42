@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Vault Security - Implement secure resource handling with context managers."""
 
+from typing import Optional, Type
+from types import TracebackType
+
 
 class SecureVault:
     """Context manager for secure vault operations."""
@@ -16,7 +19,7 @@ class SecureVault:
         self.is_open = True
         return self
 
-    def __exit__(self, exc_type, exc_val, exc_tb) -> None:
+    def __exit__(self, exc_type: Optional[Type[BaseException]], exc_val: Optional[BaseException], exc_tb: Optional[TracebackType]) -> Optional[bool]:
         """Exit context: close vault and ensure cleanup."""
         print(f"🔒 Closing vault: {self.vault_name}")
         self.is_open = False

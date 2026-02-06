@@ -6,6 +6,7 @@ from ex1.SpellCard import SpellCard
 
 
 def demo() -> None:
+    """Demonstrate deck building with different card types."""
     print("=== DataDeck Deck Builder ===")
     print("Building deck with different card types...")
 
@@ -32,6 +33,7 @@ def demo() -> None:
 
 
 def main() -> None:
+    """Main entry point for the demonstration."""
     demo()
 
 

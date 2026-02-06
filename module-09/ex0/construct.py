@@ -36,6 +36,7 @@ def collect_environment_info() -> Dict[str, Optional[str | List[str]]]:
 
 
 def print_outside_matrix(info: Dict[str, Optional[str | List[str]]]) -> None:
+    """Display message when not running in a virtual environment."""
     print("Outside the Matrix")
     print("MATRIX STATUS: You're still plugged in")
     print(f"Current Python: {info.get('python_executable')}")
@@ -50,6 +51,7 @@ def print_outside_matrix(info: Dict[str, Optional[str | List[str]]]) -> None:
 
 
 def print_inside_construct(info: Dict[str, Optional[str | List[str]]]) -> None:
+    """Display message when running inside a virtual environment."""
     print("Inside the Construct")
     print("MATRIX STATUS: Welcome to the construct")
     print(f"Current Python: {info.get('python_executable')}")
@@ -63,6 +65,7 @@ def print_inside_construct(info: Dict[str, Optional[str | List[str]]]) -> None:
 
 
 def main() -> None:
+    """Main entry point for virtual environment detection."""
     info = collect_environment_info()
     if "error" in info:
         print("Error inspecting environment:", info["error"])

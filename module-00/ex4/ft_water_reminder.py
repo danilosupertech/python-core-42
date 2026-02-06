@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-def ft_water_reminder():
+def ft_water_reminder() -> None:
+    """Check if plants need watering based on days since last watering."""
     lwatering = int(input("Days since last watering: "))
 
     if lwatering > 2:

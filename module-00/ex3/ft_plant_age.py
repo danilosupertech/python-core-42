@@ -11,7 +11,8 @@
 # **************************************************************************** #
 
 
-def  ft_plant_age():
+def ft_plant_age() -> None:
+    """Check if a plant is ready to harvest based on its age in days."""
     days = int(input("Enter plant age in days: "))
 
     if days >= 60:

@@ -8,6 +8,7 @@ Missing = Tuple[bool, str]
 
 
 def try_import(module_name: str) -> Missing:
+    """Attempt to import a module and return its status and version."""
     try:
         module = __import__(module_name)
         version = getattr(module, "__version__", "unknown")
@@ -17,6 +18,7 @@ def try_import(module_name: str) -> Missing:
 
 
 def check_dependencies() -> Tuple[List[str], List[str]]:
+    """Check all required dependencies and return lists of ok and missing packages."""
     missing_msgs: List[str] = []
     ok_msgs: List[str] = []
     for name in ("pandas", "numpy", "matplotlib", "requests"):
@@ -29,6 +31,7 @@ def check_dependencies() -> Tuple[List[str], List[str]]:
 
 
 def run_analysis() -> None:
+    """Run data analysis using pandas, numpy, and matplotlib."""
     try:
         import numpy as np
         import pandas as pd
@@ -62,6 +65,7 @@ def run_analysis() -> None:
 
 
 def compare_pip_vs_poetry() -> None:
+    """Display information about pip vs poetry dependency management."""
     print("Dependency management modes:")
     print("- pip:    pip install -r requirements.txt")
     print("- poetry: poetry install && poetry run python loading.py")
@@ -69,6 +73,7 @@ def compare_pip_vs_poetry() -> None:
 
 
 def main() -> None:
+    """Main entry point for dependency checking and analysis."""
     print("LOADING STATUS: Loading programs...")
     ok_msgs, missing_msgs = check_dependencies()
     print("Checking dependencies:")

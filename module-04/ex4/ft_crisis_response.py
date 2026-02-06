@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Crisis Response - Comprehensive error handling with context managers."""
 
+from typing import Optional, Type
+from types import TracebackType
+
 
 class DataRecoveryVault:
     """Context manager for data recovery with error handling."""
@@ -21,7 +24,7 @@ class DataRecoveryVault:
             self.file_handle = None
         return self
 
-    def __exit__(self, exc_type, exc_val, exc_tb) -> None:
+    def __exit__(self, exc_type: Optional[Type[BaseException]], exc_val: Optional[BaseException], exc_tb: Optional[TracebackType]) -> Optional[bool]:
         """Exit context: ensure proper resource cleanup."""
         if self.file_handle:
             self.file_handle.close()

@@ -44,6 +44,7 @@ def memoized_fibonacci(n: int) -> int:
 
     @functools.lru_cache(maxsize=None)
     def fib(k: int) -> int:
+        """Recursive fibonacci computation with memoization."""
         if k < 0:
             raise ValueError("n must be non-negative")
         if k in (0, 1):
@@ -57,18 +58,22 @@ def spell_dispatcher() -> Callable[[Any], Any]:
     """Create a single-dispatch spell handler."""
     @functools.singledispatch
     def dispatch(arg: Any) -> str:
+        """Dispatch spell handling based on argument type."""
         raise TypeError(f"Unsupported spell type: {type(arg).__name__}")
 
     @dispatch.register
     def _(arg: int) -> str:
+        """Handle integer arguments as damage spells."""
         return f"Damage spell dealing {arg} points"
 
     @dispatch.register
     def _(arg: str) -> str:
+        """Handle string arguments as enchantment spells."""
         return f"Enchantment spell: {arg}"
 
     @dispatch.register
     def _(arg: list) -> List[str]:
+        """Handle list arguments by dispatching each element."""
         return [dispatch(item) for item in arg]
 
     return dispatch
@@ -87,6 +92,7 @@ if __name__ == "__main__":
 
     print("\nTesting partial enchanter...")
     def base(power: int, element: str, target: str) -> str:
+        """Create a base enchantment with power, element, and target."""
         return f"{element.title()} enchantment of power {power} on {target}"
 
     enchants = partial_enchanter(base)

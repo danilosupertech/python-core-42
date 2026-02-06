@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-def ft_seed_inventory(seed_type: str, quantity: int, unit: str):
+def ft_seed_inventory(seed_type: str, quantity: int, unit: str) -> None:
+    """Display seed inventory information."""
     print(f'{seed_type.capitalize()} seeds: {quantity} packets "{unit}"')
 
 # ft_seed_inventory("tomato", 15, "packets")

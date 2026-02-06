@@ -17,6 +17,7 @@ def load_env_file() -> bool:
 
 
 def read_config() -> Dict[str, Optional[str]]:
+    """Read configuration from environment variables."""
     vars_needed = ["MATRIX_MODE", "DATABASE_URL", "API_KEY", "LOG_LEVEL", "ZION_ENDPOINT"]
     config: Dict[str, Optional[str]] = {}
     for var in vars_needed:
@@ -25,6 +26,7 @@ def read_config() -> Dict[str, Optional[str]]:
 
 
 def describe_config(config: Dict[str, Optional[str]]) -> None:
+    """Display the current configuration settings."""
     mode = config.get("MATRIX_MODE") or "development"
     print("Configuration loaded:")
     print(f"Mode: {mode}")
@@ -35,6 +37,7 @@ def describe_config(config: Dict[str, Optional[str]]) -> None:
 
 
 def security_check(config: Dict[str, Optional[str]]) -> None:
+    """Perform security validation of environment configuration."""
     print("Environment security check:")
     if not config.get("API_KEY"):
         print("[WARN] Missing API_KEY. Do not hardcode secrets; set via env or .env.")
@@ -50,6 +53,7 @@ def security_check(config: Dict[str, Optional[str]]) -> None:
 
 
 def main() -> None:
+    """Main entry point for environment configuration management."""
     print("ORACLE STATUS: Reading the Matrix...")
     load_env_file()
     config = read_config()

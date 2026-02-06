@@ -5,6 +5,7 @@ from ex3.GameEngine import GameEngine
 
 
 def demo() -> None:
+    """Demonstrate the game engine with factory and strategy patterns."""
     print("=== DataDeck Game Engine ===")
     engine = GameEngine()
     factory = FantasyCardFactory()
@@ -28,6 +29,7 @@ def demo() -> None:
 
 
 def main() -> None:
+    """Main entry point."""
     demo()
 
 

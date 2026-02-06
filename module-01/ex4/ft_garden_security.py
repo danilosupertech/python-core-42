@@ -15,6 +15,7 @@ class SecurePlant:  # pylint: disable=too-few-public-methods
     """Represents a secure plant with validated height and age."""
 
     def __init__(self, name: str, height: int, age_days: int) -> None:
+        """Initialize a secure plant with validated height and age."""
         self.name = name
         self._height = 0
         self._age_days = 0

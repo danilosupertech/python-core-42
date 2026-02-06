@@ -8,15 +8,35 @@ from ex4.TournamentCard import TournamentCard
 
 
 class TournamentPlatform:
+    """Platform for managing tournament registrations and matches."""
+
     def __init__(self) -> None:
+        """Initialize the tournament platform with empty registry."""
         self.registry: Dict[str, TournamentCard] = {}
 
     def register_card(self, card: TournamentCard) -> str:
+        """Register a card in the tournament.
+        
+        Args:
+            card: The tournament card to register.
+            
+        Returns:
+            The generated card ID.
+        """
         card_id = f"{card.name.lower().replace(' ', '_')}_{len(self.registry) + 1:03}"
         self.registry[card_id] = card
         return card_id
 
     def create_match(self, card1_id: str, card2_id: str) -> Dict:
+        """Create and resolve a match between two cards.
+        
+        Args:
+            card1_id: ID of the first card.
+            card2_id: ID of the second card.
+            
+        Returns:
+            Dictionary with match results including winner and ratings.
+        """
         card1 = self.registry[card1_id]
         card2 = self.registry[card2_id]
 
@@ -38,6 +58,11 @@ class TournamentPlatform:
         }
 
     def get_leaderboard(self) -> List[Dict]:
+        """Get the tournament leaderboard sorted by rating.
+        
+        Returns:
+            List of dictionaries with card rankings.
+        """
         ranked = sorted(self.registry.items(), key=lambda item: item[1].rating, reverse=True)
         return [
             {"id": card_id, **card.get_rank_info()}
@@ -45,6 +70,11 @@ class TournamentPlatform:
         ]
 
     def generate_tournament_report(self) -> Dict:
+        """Generate a comprehensive tournament report.
+        
+        Returns:
+            Dictionary with tournament statistics.
+        """
         ratings = [card.rating for card in self.registry.values()]
         return {
             "total_cards": len(self.registry),
@@ -54,6 +84,17 @@ class TournamentPlatform:
         }
 
     def _get_card_id(self, card: TournamentCard) -> str:
+        """Get the ID of a registered card.
+        
+        Args:
+            card: The tournament card to find.
+            
+        Returns:
+            The card ID string.
+            
+        Raises:
+            ValueError: If card is not registered.
+        """
         for cid, stored in self.registry.items():
             if stored is card:
                 return cid

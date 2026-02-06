@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-def ft_plot_area():
+def ft_plot_area() -> None:
+    """Calculate and print the area of a plot based on user input."""
     length = int(input("Enter length: "))
     width = int(input("Enter width: "))
     area = length * width

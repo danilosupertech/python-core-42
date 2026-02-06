@@ -3,6 +3,7 @@ from ex0.CreatureCard import CreatureCard
 
 
 def demo() -> None:
+    """Demonstrate the card foundation with creature card examples."""
     print("=== DataDeck Card Foundation ===")
     print("Testing Abstract Base Class Design:")
 
@@ -26,6 +27,7 @@ def demo() -> None:
 
 
 def main() -> None:
+    """Main entry point for the demonstration script."""
     demo()
 
 

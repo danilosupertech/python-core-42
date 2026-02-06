@@ -3,6 +3,7 @@ from ex2.EliteCard import EliteCard
 
 
 def demo() -> None:
+    """Demonstrate the ability system with an elite card."""
     print("=== DataDeck Ability System ===")
     elite = EliteCard("Arcane Warrior", 4, "Epic", attack=5, health=8, mana_pool=3)
 
@@ -26,6 +27,7 @@ def demo() -> None:
 
 
 def main() -> None:
+    """Main entry point."""
     demo()
 
 

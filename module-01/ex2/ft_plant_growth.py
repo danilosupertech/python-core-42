@@ -41,8 +41,8 @@ class Plant:
         return f"{self.name}: {self.height}cm, {self.age_day} days old"
 
 
-def main():
-    """ Main function"""
+def main() -> None:
+    """Main function to demonstrate plant growth simulation."""
     rose = Plant("Rose", 25, 30)
 
     print("=== Day 1 ===")

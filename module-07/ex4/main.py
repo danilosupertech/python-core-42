@@ -4,6 +4,7 @@ from ex4.TournamentPlatform import TournamentPlatform
 
 
 def demo() -> None:
+    """Demonstrate the tournament platform with ranking system."""
     print("=== DataDeck Tournament Platform ===")
     platform = TournamentPlatform()
 
@@ -35,6 +36,7 @@ def demo() -> None:
 
 
 def main() -> None:
+    """Main entry point."""
     demo()
 
 

@@ -29,7 +29,8 @@ class FloweringPlant(Plant):
         super().__init__(name, height)
         self.flower_color = flower_color
 
-    def describe(self) -> str:  # type: ignore[override]
+    def describe(self) -> str:
+        """Return a detailed description including bloom color and status."""
         detail = f"{self.name}: {self.height}cm, {self.flower_color} flowers"
         return f"{detail} (blooming)"
 
@@ -48,7 +49,8 @@ class PrizeFlower(FloweringPlant):
         super().__init__(name, height, flower_color)
         self.prize_points = prize_points
 
-    def describe(self) -> str:  # type: ignore[override]
+    def describe(self) -> str:
+        """Return a detailed description including prize points."""
         detail = super().describe().rstrip(" (blooming)")
         return f"{detail} (blooming), Prize points: {self.prize_points}"
 
@@ -188,6 +190,7 @@ class GardenManager:
 
 
 def main() -> None:
+    """Main function to demonstrate garden analytics system."""
     print("=== Garden Management System Demo ===")
     manager = GardenManager.create_garden_network()
 

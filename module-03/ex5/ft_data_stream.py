@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Stream Wizard - Process data streams using generators."""
 
+from typing import Dict, Any, Generator
 
-def game_event_stream(count: int):
+
+def game_event_stream(count: int) -> Generator[Dict[str, Any], None, None]:
     """
     Generate game events on-demand.
 
@@ -29,7 +31,7 @@ def game_event_stream(count: int):
         }
 
 
-def fibonacci_stream(limit: int):
+def fibonacci_stream(limit: int) -> Generator[int, None, None]:
     """
     Generate Fibonacci numbers up to limit.
 
@@ -47,7 +49,7 @@ def fibonacci_stream(limit: int):
         count += 1
 
 
-def prime_stream(limit: int):
+def prime_stream(limit: int) -> Generator[int, None, None]:
     """
     Generate prime numbers up to limit count.
 
@@ -58,6 +60,7 @@ def prime_stream(limit: int):
         Prime numbers
     """
     def is_prime(num: int) -> bool:
+        """Check if a number is prime."""
         if num < 2:
             return False
         for i in range(2, int(num ** 0.5) + 1):

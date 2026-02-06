@@ -10,10 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-def ft_count_harvest_recursive():
+def ft_count_harvest_recursive() -> None:
+    """Count down harvest days recursively."""
     n = int(input("Enter number of days: "))
 
-    def recursive_harvest(day: int):
+    def recursive_harvest(day: int) -> None:
+        """Recursive helper function to count days."""
         if day <= 0:
             return
         recursive_harvest(day - 1)

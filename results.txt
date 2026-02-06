@@ -1,0 +1,111 @@
+🔍 Verificando padrões de código em: .
+================================================================================
+
+⚠️  Encontrados 60 problemas:
+
+
+📄 module-07/ex2/Combatable.py
+================================================================================
+  Linha   19 | syntax       | Erro de sintaxe: unterminated string literal (detected at line 19)
+
+📄 module-07/ex2/EliteCard.py
+================================================================================
+  Linha   24 | syntax       | Erro de sintaxe: unterminated string literal (detected at line 24)
+
+📄 module-07/ex2/Magical.py
+================================================================================
+  Linha   19 | syntax       | Erro de sintaxe: unterminated string literal (detected at line 19)
+
+📄 module-07/ex2/main.py
+================================================================================
+  Linha   30 | syntax       | Erro de sintaxe: unterminated string literal (detected at line 30)
+
+📄 module-07/ex3/AggressiveStrategy.py
+================================================================================
+  Linha   38 | docstring    | Método "get_strategy_name" está sem docstring
+  Linha   38 | docstring    | Função "get_strategy_name" está sem docstring
+  Linha   41 | docstring    | Método "prioritize_targets" está sem docstring
+  Linha   41 | docstring    | Função "prioritize_targets" está sem docstring
+
+📄 module-07/ex3/CardFactory.py
+================================================================================
+  Linha   26 | docstring    | Método "create_spell" está sem docstring
+  Linha   26 | docstring    | Função "create_spell" está sem docstring
+  Linha   30 | docstring    | Método "create_artifact" está sem docstring
+  Linha   30 | docstring    | Função "create_artifact" está sem docstring
+  Linha   34 | docstring    | Método "create_themed_deck" está sem docstring
+  Linha   34 | docstring    | Função "create_themed_deck" está sem docstring
+  Linha   38 | docstring    | Método "get_supported_types" está sem docstring
+  Linha   38 | docstring    | Função "get_supported_types" está sem docstring
+
+📄 module-07/ex3/FantasyCardFactory.py
+================================================================================
+  Linha   29 | docstring    | Método "create_spell" está sem docstring
+  Linha   29 | docstring    | Função "create_spell" está sem docstring
+  Linha   34 | docstring    | Método "create_artifact" está sem docstring
+  Linha   34 | docstring    | Função "create_artifact" está sem docstring
+  Linha   37 | docstring    | Método "create_themed_deck" está sem docstring
+  Linha   37 | docstring    | Função "create_themed_deck" está sem docstring
+  Linha   48 | docstring    | Método "get_supported_types" está sem docstring
+  Linha   48 | docstring    | Função "get_supported_types" está sem docstring
+
+📄 module-07/ex3/GameEngine.py
+================================================================================
+  Linha   22 | docstring    | Método "configure_engine" está sem docstring
+  Linha   22 | docstring    | Função "configure_engine" está sem docstring
+  Linha   50 | docstring    | Método "get_engine_status" está sem docstring
+  Linha   50 | docstring    | Função "get_engine_status" está sem docstring
+
+📄 module-07/ex3/GameStrategy.py
+================================================================================
+  Linha   25 | docstring    | Método "get_strategy_name" está sem docstring
+  Linha   25 | docstring    | Função "get_strategy_name" está sem docstring
+  Linha   29 | docstring    | Método "prioritize_targets" está sem docstring
+  Linha   29 | docstring    | Função "prioritize_targets" está sem docstring
+
+📄 module-07/ex4/Rankable.py
+================================================================================
+  Linha   21 | docstring    | Método "update_wins" está sem docstring
+  Linha   21 | docstring    | Função "update_wins" está sem docstring
+  Linha   25 | docstring    | Método "update_losses" está sem docstring
+  Linha   25 | docstring    | Função "update_losses" está sem docstring
+
+📄 module-07/ex4/TournamentCard.py
+================================================================================
+  Linha   32 | docstring    | Método "play" está sem docstring
+  Linha   32 | docstring    | Função "play" está sem docstring
+  Linha   35 | docstring    | Método "attack" está sem docstring
+  Linha   35 | docstring    | Função "attack" está sem docstring
+  Linha   38 | docstring    | Método "defend" está sem docstring
+  Linha   38 | docstring    | Função "defend" está sem docstring
+  Linha   44 | docstring    | Método "get_combat_stats" está sem docstring
+  Linha   44 | docstring    | Função "get_combat_stats" está sem docstring
+  Linha   55 | docstring    | Método "update_wins" está sem docstring
+  Linha   55 | docstring    | Função "update_wins" está sem docstring
+  Linha   59 | docstring    | Método "update_losses" está sem docstring
+  Linha   59 | docstring    | Função "update_losses" está sem docstring
+
+📄 module-07/ex4/TournamentPlatform.py
+================================================================================
+  Linha   60 | docstring    | Método "get_leaderboard" está sem docstring
+  Linha   60 | docstring    | Função "get_leaderboard" está sem docstring
+  Linha   67 | docstring    | Método "generate_tournament_report" está sem docstring
+  Linha   67 | docstring    | Função "generate_tournament_report" está sem docstring
+  Linha   76 | docstring    | Método "_get_card_id" está sem docstring
+  Linha   76 | docstring    | Função "_get_card_id" está sem docstring
+
+📄 module-10/ex3/functools_artifacts.py
+================================================================================
+  Linha   65 | naming       | Função/método "_" deve estar em snake_case
+  Linha   65 | docstring    | Função "_" está sem docstring
+  Linha   69 | naming       | Função/método "_" deve estar em snake_case
+  Linha   69 | docstring    | Função "_" está sem docstring
+  Linha   73 | naming       | Função/método "_" deve estar em snake_case
+  Linha   73 | docstring    | Função "_" está sem docstring
+
+================================================================================
+
+📊 Resumo por tipo:
+  docstring   :  53 problemas
+  naming      :   3 problemas
+  syntax      :   4 problemas

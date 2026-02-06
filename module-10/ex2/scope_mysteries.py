@@ -9,6 +9,7 @@ def mage_counter() -> Callable[[], int]:
     count = 0
 
     def counter() -> int:
+        """Increment and return the call count."""
         nonlocal count
         count += 1
         return count
@@ -21,6 +22,7 @@ def spell_accumulator(initial_power: int) -> Callable[[int], int]:
     total = initial_power
 
     def accumulator(amount: int) -> int:
+        """Add amount to total power and return the new total."""
         nonlocal total
         total += amount
         return total
@@ -32,6 +34,7 @@ def enchantment_factory(enchantment_type: str) -> Callable[[str], str]:
     """Return a function that applies an enchantment type to an item."""
 
     def enchant(item_name: str) -> str:
+        """Apply the enchantment to the given item."""
         return f"{enchantment_type} {item_name}"
 
     return enchant
@@ -42,9 +45,11 @@ def memory_vault() -> Dict[str, Callable[..., Any]]:
     storage: Dict[str, Any] = {}
 
     def store(key: str, value: Any) -> None:
+        """Store a value in the vault with the given key."""
         storage[key] = value
 
     def recall(key: str) -> Any:
+        """Retrieve a value from the vault by key."""
         return storage.get(key, "Memory not found")
 
     return {"store": store, "recall": recall}

@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-def ft_harvest_total():
+def ft_harvest_total() -> None:
+    """Calculate and print the total harvest from three days."""
     day1 = int(input("Enter harvest for day 1: "))
     day2 = int(input("Enter harvest for day 2: "))
     day3 = int(input("Enter harvest for day 3: "))

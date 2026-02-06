@@ -10,7 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-def ft_garden_summary():
+def ft_garden_summary() -> None:
+    """Display a summary of garden information."""
     name = input("Enter garden name: ")
     plant = int(input("Enter number of plants: "))
 

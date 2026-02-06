@@ -9,7 +9,10 @@ from ex3.GameStrategy import GameStrategy
 
 
 class GameEngine:
+    """Game orchestrator using strategy and factory patterns."""
+
     def __init__(self) -> None:
+        """Initialize the game engine with empty state."""
         self.factory: Optional[CardFactory] = None
         self.strategy: Optional[GameStrategy] = None
         self.hand: List[Card] = []
@@ -17,6 +20,12 @@ class GameEngine:
         self.report: Dict = {"turns_simulated": 0, "strategy_used": None, "total_damage": 0, "cards_created": 0}
 
     def configure_engine(self, factory: CardFactory, strategy: GameStrategy) -> None:
+        """Configure the game engine with a factory and strategy.
+        
+        Args:
+            factory: CardFactory instance for creating cards.
+            strategy: GameStrategy instance for turn execution.
+        """
         self.factory = factory
         self.strategy = strategy
         self.hand = [
@@ -28,6 +37,14 @@ class GameEngine:
         self.report["strategy_used"] = strategy.get_strategy_name()
 
     def simulate_turn(self) -> Dict:
+        """Simulate a game turn using the configured strategy.
+        
+        Returns:
+            Dictionary with turn simulation results.
+            
+        Raises:
+            RuntimeError: If engine is not configured.
+        """
         if not self.factory or not self.strategy:
             raise RuntimeError("Engine not configured")
 
@@ -37,6 +54,11 @@ class GameEngine:
         return turn_result
 
     def get_engine_status(self) -> Dict:
+        """Get the current status of the game engine.
+        
+        Returns:
+            Dictionary with engine statistics and current state.
+        """
         return {
             "turns_simulated": self.report["turns_simulated"],
             "strategy_used": self.report["strategy_used"],

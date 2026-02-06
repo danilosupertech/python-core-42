@@ -61,7 +61,6 @@ if __name__ == "__main__":
     print("=== Plant Factory Output ===")
     for plant in plants:
         garden.append(Plant(plant[0], plant[1], plant[2]))
-    
     for i in garden:
         print(i.get_info())
     print(f"Total plants created: {len(garden)}")
